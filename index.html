@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugged In Notes</title>
+    <link rel="icon" type="image/x-icon" href="plug-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <button id="sidebarToggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+            <h1><i class="fas fa-plug"></i> Plugged In Notes</h1>
+            <button id="darkModeToggle"><i class="fas fa-adjust"></i></button>
+        </header>
+        <nav>
+            <button id="newNoteBtn" class="btn-primary"><i class="fas fa-plus"></i> New Note</button>
+            <button id="saveBtn" class="btn-success"><i class="fas fa-save"></i> Save</button>
+            <button id="deleteNoteBtn" class="btn-danger"><i class="fas fa-trash-alt"></i> Delete Note</button>
+            <button id="exportPdfBtn" class="btn-info"><i class="fas fa-file-pdf"></i> Export PDF</button>
+            <button id="toggleMarkdownBtn" class="btn-secondary"><i class="fab fa-markdown"></i> Toggle Markdown</button>
+            <button id="syncBtn" class="btn-warning"><i class="fas fa-cloud-upload-alt"></i> Sync</button>
+        </nav>
+        <main>
+            <div id="sidebar">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search notes...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="noteList"></div>
+                <div id="tagContainer">
+                  <div class="tag-input-container">
+                    <input type="text" id="tagInput" placeholder="Add tags...">
+                    <button id="addTagBtn"><i class="fas fa-plus"></i></button>
+                  </div>
+                  <div id="tagList"></div>
+                </div>
+            </div>
+            <div id="editorContainer">
+                <div class="toolbar">
+                    <select id="fontFamily">
+    <option value="'Fira Code', monospace">Fira Code</option>
+    <option value="'Source Code Pro', monospace">Source Code Pro</option>
+    <option value="'JetBrains Mono', monospace">JetBrains Mono</option>
+    <option value="'Roboto Mono', monospace">Roboto Mono</option>
+    <option value="'Ubuntu Mono', monospace">Ubuntu Mono</option>
+    <option value="'Inconsolata', monospace">Inconsolata</option>
+    <option value="'Anonymous Pro', monospace">Anonymous Pro</option>
+    <option value="'Oxygen Mono', monospace">Oxygen Mono</option>
+    <option value="'IBM Plex Mono', monospace">IBM Plex Mono</option>
+    <option value="'Space Mono', monospace">Space Mono</option>
+</select>
+                    <select id="fontSize">
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                    </select>
+                    <input type="color" id="textColor" value="#24292e">
+                    <input type="color" id="highlightColor" value="#ffffff">
+                    <button id="boldBtn"><i class="fas fa-bold"></i></button>
+                    <button id="italicBtn"><i class="fas fa-italic"></i></button>
+                    <button id="underlineBtn"><i class="fas fa-underline"></i></button>
+                    <button id="orderedListBtn"><i class="fas fa-list-ol"></i></button>
+                    <button id="unorderedListBtn"><i class="fas fa-list-ul"></i></button>
+                    <button id="alignLeftBtn"><i class="fas fa-align-left"></i></button>
+                    <button id="alignCenterBtn"><i class="fas fa-align-center"></i></button>
+                    <button id="alignRightBtn"><i class="fas fa-align-right"></i></button>
+                </div>
+                <input type="text" id="noteTitle" placeholder="Note Title">
+                <div id="note" contenteditable="true" placeholder="Write your notes here..."></div>
+                <div class="info">
+                    <span id="wordCount">Words: 0</span>
+                    <span id="letterCount">Letters: 0</span>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="search-container">
+                <input type="text" id="replaceInput" placeholder="Replace with...">
+                <button id="replaceBtn"><i class="fas fa-exchange-alt"></i> Replace</button>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
